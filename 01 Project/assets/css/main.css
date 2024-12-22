@@ -1,0 +1,22 @@
+.lh-lead {
+  line-height: 1.7;
+}
+
+.accordion-headers {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.accordion-headers::after {
+  content: "\f067";
+  font-family: "font awesome 5 pro";
+  font-size: 1.6rem;
+}
+.accordion-headers.active::after {
+  content: "\f068";
+}
+.accordion-bodys {
+  height: 0;
+  overflow: hidden;
+  transition: all 0.3s;
+}
