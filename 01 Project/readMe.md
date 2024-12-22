@@ -1,4 +1,4 @@
-[![Git Tutorials](https://img.shields.io/badge/Git_Tutorials-000?style=for-the-badge&logo=ko-fi&logoColor=white)](#)
+[![JS Small App](https://img.shields.io/badge/JS_SMALL_APP-000?style=for-the-badge&logo=ko-fi&logoColor=white)](#)
 
 > I'm Zaw Linn Tun a Frontend Web Developer on [Zaw Linn - Vlog](https://www.youtube.com/@zawlinn-vlog). :heart:
 

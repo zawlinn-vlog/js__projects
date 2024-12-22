@@ -3,29 +3,44 @@
 const headers = document.querySelectorAll(".accordion-headers");
 const bodys = document.querySelectorAll(".accordion-bodys");
 
+/* CLEAR CLASS */
+
 function clearClass() {
-  headers.forEach((el) => el.classList.remove("active"));
+  headers.forEach((el) => el.classList.remove("active", "bg-primary"));
   bodys.forEach((el) => {
-    el.style.height = 0;
+    el.style.height = null;
     el.style.padding = 0;
   });
 }
 
+/* ACTIVE HEIGHT FUN */
+
+function activeHeight(el) {
+  el.classList.add("active", "bg-primary");
+
+  el.nextElementSibling.style.height =
+    el.nextElementSibling.scrollHeight + "px";
+}
+
+/* INITIATE  */
+
+function init() {
+  activeHeight(headers[0]);
+}
+
+init();
+
+/* ADD EVENT LISTENER */
+
 headers.forEach((el) => {
   el.addEventListener("click", function () {
     console.log(this.nextElementSibling);
+    console.log(this.nextElementSibling.style.height);
 
-    clearClass();
+    if (!this.nextElementSibling.style.height) {
+      clearClass();
 
-    this.classList.add("active");
-
-    // console.log(this.nextElementSibling.scrollHeight);
-    // console.log(this.nextElementSibling.offsetHeight);
-
-    this.nextElementSibling.style.padding = ".3rem 1rem 2rem";
-    this.nextElementSibling.style.height =
-      this.nextElementSibling.scrollHeight + 30 + "px";
-
-    // this.nextElementSibling.classList.add("bg-light");
+      activeHeight(this);
+    }
   });
 });
