@@ -1,0 +1,27 @@
+// @media print {
+//   * {
+//     visibility: hidden;
+//     color: tomato;
+//   }
+
+//   .printContent * {
+//     visibility: visible;
+//   }
+
+//   .txt-medium {
+//     color: tomato;
+//   }
+
+//   .bg {
+//      -webkit-print-color-adjust: exact;
+//   }
+
+//   .pagebreak {
+//     page-break-after: always;
+//   }
+// }
+
+// @page {
+//   size: A4; // 4in 6in;
+//      margin: 0;
+// }

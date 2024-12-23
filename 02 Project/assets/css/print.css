@@ -1,0 +1,23 @@
+@page {
+  /* size: landscape; */
+  /* size: 4in 6in; */
+  size: portrait;
+  padding: 3rem;
+}
+
+#printBtn {
+  display: none;
+}
+
+.bg {
+  -webkit-print-color-adjust: exact;
+}
+
+.col-12 {
+  padding-top: 3rem;
+}
+
+.txt-medium {
+  /* page-break-inside: auto; */
+  page-break-after: always;
+}

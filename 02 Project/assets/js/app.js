@@ -33,3 +33,11 @@ window.addEventListener("scroll", function () {
 
   //   console.log(scrollLen, scrollH, clientH, height, width.toFixed(2));
 });
+
+const printBtn = document.querySelector("#printBtn");
+
+console.log(printBtn);
+
+printBtn.addEventListener("click", function () {
+  window.print();
+});

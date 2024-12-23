@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="./assets/fontawesomepro/css/all.css" />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/main.css" media="all" />
+    <link rel="stylesheet" href="./assets/css/print.css" media="print" />
   </head>
   <body>
     <div class="wrapper">
@@ -25,12 +26,12 @@
 
       <!-- COTENT -->
       <div class="container mt-5">
-        <button class="btn btn-primary px-4">
+        <button class="btn btn-primary px-4" id="printBtn">
           Print Me
           <i class="fad fa-print ms-2"></i>
         </button>
 
-        <div class="row mt-5">
+        <div class="row mt-5 printContent">
           <div class="col-4">
             <img
               src="https://picsum.photos/seed/picsum/400/200"
@@ -39,7 +40,7 @@
             />
           </div>
           <div class="col-8">
-            <p class="lead pt-2 txt-medium">
+            <p class="lead pt-2 txt-medium text-bg-primary bg">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
               adipisci, ducimus nemo ratione impedit possimus dolores odit
               recusandae qui. Eius impedit dolorem aut eveniet earum totam,
@@ -51,7 +52,7 @@
 
           <hr class="mt-5" />
 
-          <div class="col-12 mt-5 mb-4">
+          <div class="col-12 mt-5 mb-4 pagebreak">
             <h3 class="text-primary">01 This is Heading</h3>
             <p class="txt-medium">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
