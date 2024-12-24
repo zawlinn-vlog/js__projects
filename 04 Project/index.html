@@ -12,32 +12,55 @@
       href="./node_modules/bootstrap/dist/css/bootstrap-grid.min.css"
     />
 
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="./assets/fontawesomepro/css/all.css" />
+
     <!-- custom -->
     <link rel="stylesheet" href="./assets/css/main.css" />
   </head>
   <body>
     <div class="wrapper vh-100">
-      <div class="container d-flex justify-content-center align-items-center">
-        <div class="row">
-          <div class="col-12">
-            <div class="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
+      <div class="container">
+        <div class="d-flex justify-content-center align-items-center vh">
+          <div class="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <figure class="carousel-pic">
                   <img src="./assets/img/01.jpg" alt="" class="carousel-img" />
-                  <p class="carousel-author">John William</p>
-                  <button class="btn btn-primary">View Profile</button>
-                </div>
-                <div class="carousel-item">
-                  <img src="./assets/img/02.jpg" alt="" class="carousel-img" />
-                  <p class="carousel-author">William Smith</p>
-                  <button class="btn btn-primary">View Profile</button>
-                </div>
-                <div class="carousel-item">
-                  <img src="./assets/img/03.jpg" alt="" class="carousel-img" />
-                  <p class="carousel-author">Mecheal Jame</p>
-                  <button class="btn btn-primary">View Profile</button>
-                </div>
+                </figure>
+                <p class="carousel-author">John William</p>
+                <button class="btn btn-primary">View Profile</button>
               </div>
+              <div class="carousel-item">
+                <figure class="carousel-pic">
+                  <img src="./assets/img/02.jpg" alt="" class="carousel-img" />
+                </figure>
+                <p class="carousel-author">William Smith</p>
+                <button class="btn btn-primary">View Profile</button>
+              </div>
+              <div class="carousel-item">
+                <figure class="carousel-pic">
+                  <img src="./assets/img/03.jpg" alt="" class="carousel-img" />
+                </figure>
+                <p class="carousel-author">Mecheal Jame</p>
+                <button class="btn btn-primary">View Profile</button>
+              </div>
+            </div>
+
+            <a href="javascript:void(0)" class="arrow arrow-left">
+              <i class="fal fa-chevron-left"></i>
+            </a>
+            <a href="javascript:void(0)" class="arrow arrow-right arrow-active">
+              <i class="fal fa-chevron-right"></i>
+            </a>
+
+            <div class="dots">
+              <a
+                href="javascript:void(0)"
+                class="dots-items dots-1 dots-active"
+              ></a
+              ><a href="javascript:void(0)" class="dots-items dots-2"></a
+              ><a href="javascript:void(0)" class="dots-items dots-3"></a>
             </div>
           </div>
         </div>
@@ -45,5 +68,7 @@
     </div>
 
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+
+    <script src="./assets/js/app.js"></script>
   </body>
 </html>
