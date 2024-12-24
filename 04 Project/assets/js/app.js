@@ -16,14 +16,16 @@ $(document).ready(function () {
   slide(slideTo);
 
   function clearDots() {
-    $(".dots-items").each((el) => {
-      el.removeClass("dots-active");
+    $(".dots-items").each((ind, el) => {
+      $(el).removeClass("dots-active");
     });
   }
 
   // Click Arrow Right
 
   $(".arrow-right").on("click", function () {
+    clearDots();
+
     if (slideTo < 2) {
       slideTo++;
 
@@ -31,27 +33,41 @@ $(document).ready(function () {
 
       console.log(slideTo);
 
-      clearDots();
-
-      allDots[slideTo].addClass("dots-active");
+      $(allDots[slideTo]).addClass("dots-active");
     } else {
       slideTo = 0;
 
       slide(slideTo);
-      console.log(slideTo);
+      //   console.log(slideTo);
+      $(allDots[slideTo]).addClass("dots-active");
     }
   });
 
   // Click Arrow Left
   $(".arrow-left").on("click", function () {
+    clearDots();
+
     if (slideTo >= 1) {
       slideTo--;
       slide(slideTo);
-      console.log(slideTo);
+      //   console.log(slideTo);
+      $(allDots[slideTo]).addClass("dots-active");
     } else {
       slideTo = 2;
 
       slide(slideTo);
+      $(allDots[slideTo]).addClass("dots-active");
     }
+  });
+
+  // CLICK DOTS
+
+  $(".dots-items").each((ind, el) => {
+    $(el).on("click", function () {
+      slideTo = $(this).data("slide__num");
+      slide(slideTo);
+      clearDots();
+      $(allDots[slideTo]).addClass("dots-active");
+    });
   });
 });
