@@ -16,7 +16,10 @@ $(document).ready(function () {
         width: `${count}%`,
       });
 
-      if (count == 100) clearInterval(startCounting);
+      if (count == 100) {
+        clearInterval(startCounting);
+        // $(this).off("click");
+      }
     }, 25);
   });
 
@@ -38,6 +41,7 @@ $(document).ready(function () {
       if (startPoint == 0) {
         clearInterval(startDeducing);
         $(this).attr("disabled", true);
+        // $(this).off("click");
         $("#download-link").attr("disabled", false);
       }
     }, 1000);
