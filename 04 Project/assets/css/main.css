@@ -28,7 +28,7 @@ body {
   display: flex;
   position: relative;
 }
-.carousel-item {
+.carousel-items {
   padding-top: 3rem;
   width: 100%;
   height: 100%;

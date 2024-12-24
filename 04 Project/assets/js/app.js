@@ -6,7 +6,7 @@ $(document).ready(function () {
   const allDots = document.querySelectorAll(".dots-items");
 
   function slide(count) {
-    $(".carousel-item").each((ind, el) => {
+    $(".carousel-items").each((ind, el) => {
       $(el).css({
         left: `${(ind - count) * 100}%`,
       });
