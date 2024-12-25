@@ -2,6 +2,7 @@
 
 .left-side {
   padding-top: 5rem;
+  padding-bottom: 2rem;
   //   display: grid;
 
   //   place-items: center center;
@@ -10,4 +11,13 @@
 .txt-file {
   display: flex;
   gap: 1rem;
+}
+
+.items-pic {
+  transform: translate(-10%, 10%);
+}
+
+.main-items {
+  display: flex;
+  align-items: center;
 }

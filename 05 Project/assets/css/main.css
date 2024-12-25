@@ -10,6 +10,11 @@ html {
   font-size: 75%;
   line-height: 1.7;
 }
+@media only screen and (max-width: 90em) {
+  html {
+    font-size: 62.5%;
+  }
+}
 
 body {
   box-sizing: border-box;
@@ -42,15 +47,30 @@ body {
   font-size: 5rem;
 }
 .logo-txt {
+  width: 50%;
   font-size: 1.3rem;
   line-height: 1.1;
 }
 
 .left-side {
   padding-top: 5rem;
+  padding-bottom: 2rem;
 }
 
 .txt-file {
   display: flex;
   gap: 1rem;
+}
+
+.items-pic {
+  transform: translate(-10%, 10%);
+}
+
+.main-items {
+  display: flex;
+  align-items: center;
+}
+
+.wrapper {
+  max-width: 192rem;
 }
