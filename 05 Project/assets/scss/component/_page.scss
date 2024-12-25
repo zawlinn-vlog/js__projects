@@ -1,7 +1,10 @@
 //
 
 .logo {
+  align-self: end;
+
   display: flex;
+  justify-content: flex-start;
   align-items: center;
   gap: 0.5rem;
 
@@ -12,8 +15,12 @@
   }
 
   &-txt {
-    width: 50%;
+    width: 40%;
     font-size: 1.3rem;
     line-height: 1.1;
   }
+}
+
+.icon-google {
+  height: 1.6rem;
 }

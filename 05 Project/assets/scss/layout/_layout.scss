@@ -1,9 +1,12 @@
 //
 
 .left-side {
-  padding-top: 5rem;
-  padding-bottom: 2rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
   //   display: grid;
+
+  display: grid;
+  grid-template-rows: repeat(3, min-content) 1fr;
 
   //   place-items: center center;
 }
@@ -14,7 +17,7 @@
 }
 
 .items-pic {
-  transform: translate(-10%, 10%);
+  transform: translateX(-10%);
 }
 
 .main-items {

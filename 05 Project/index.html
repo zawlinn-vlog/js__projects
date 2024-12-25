@@ -54,10 +54,81 @@
               <img src="./assets/img/02.png" alt="" class="items-img w-100" />
             </figure>
           </div>
-          <div class="col-3 text-bg-dark">right</div>
+          <div class="col-3 text-bg-dark item">
+            <div class="col-12 px-4">
+              <div class="item-header">
+                <h3 class="text-capitalize item-title">Sport shirt</h3>
+                <div class="item-price">
+                  <span class="item-price__del">$52.00</span>
+                  <span class="item-price__current">$50.00</span>
+                </div>
+              </div>
+              <p class="item-desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Excepturi nisi at autem voluptatibus explicabo accusamus quas
+                quam harum odio nihil?
+              </p>
+
+              <div class="row">
+                <div class="col-12">
+                  <div class="cart">
+                    <div class="cart-amount">
+                      <input
+                        type="text"
+                        name=""
+                        id=""
+                        min="0"
+                        class="cart-number rounded form-control py-3 px-5 text-center cart-number"
+                        placeholder="0"
+                      />
+                    </div>
+                    <div class="">
+                      <button
+                        class="btn btn-primary rounded py-3 px-5 cart-btn"
+                      >
+                        Add to Cart
+                      </button>
+                    </div>
+                  </div>
+                  <p class="whitelist">
+                    <i class="fal fa-heart"></i>
+                    <span class="whitelist-txt">Add to Whitelist</span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="categories">
+                <div class="categories-title mb-2">
+                  <span class="categories-title__name">Categories: </span>
+                  <span class="categories-title__type">man</span>
+                </div>
+                <div class="categories-title">
+                  <span class="categories-title__name">Tags: </span>
+                  <span class="categories-title__type"
+                    >fashion, man, summer</span
+                  >
+                </div>
+              </div>
+
+              <div class="d-grid signin">
+                <button class="btn btn-light py-3 signin-btn">Sign In</button>
+              </div>
+              <hr />
+              <div class="d-grid register">
+                <button class="btn btn-light py-3 register-btn">
+                  Register
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
+
+    <div class="modal">
+      <div class="modal-shadow"></div>
+      <div class="modal-container">Sign in</div>
+    </div>
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script src="./assets/js/app.js"></script>
   </body>

@@ -20,24 +20,124 @@ body {
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: #bcbcbc;
+}
+
 .txt-title {
-  font-size: 4rem;
-  line-height: 1.1;
+  font-size: 4.8rem;
+  line-height: 0.9;
+  letter-spacing: 0.002rem;
 }
 .txt-file {
   margin: 4rem 0 5rem;
+  font-size: 2.8rem;
 }
 .txt-desc {
   padding: 0;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   list-style-position: inside;
 }
 .txt-desc__items {
   padding: 0.5rem 0;
 }
 
+.item {
+  display: grid;
+  padding-top: 6rem;
+}
+.item-header {
+  margin-bottom: 2rem;
+}
+.item-title {
+  font-size: 3.6rem;
+  line-height: 1;
+}
+.item-price {
+  font-size: 1.5rem;
+  color: #bbb;
+}
+.item-price__del {
+  text-decoration: line-through;
+  margin-right: 0.5rem;
+}
+.item-desc {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  color: #bcbcbc;
+  margin-bottom: 4.4rem;
+}
+
+.cart {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 1rem;
+}
+.cart-amount {
+  position: relative;
+}
+.cart-amount::before, .cart-amount::after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: "Font Awesome 5 pro";
+  color: #000;
+  cursor: pointer;
+  font-size: 1.8rem;
+}
+.cart-amount::before {
+  content: "\f068";
+  left: 1rem;
+}
+.cart-amount::after {
+  content: "\f067";
+  right: 1rem;
+}
+.cart-number {
+  font-size: 1.4rem;
+}
+.cart-btn {
+  font-size: 1.4rem;
+}
+
+.whitelist {
+  color: #bababa;
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+.whitelist:hover {
+  color: #efefef;
+}
+
+.categories {
+  color: #bcbcbc;
+  font-size: 1.4rem;
+  margin-top: 2.4rem;
+}
+.categories-title__name {
+  color: #dcdcdc;
+}
+
+.signin,
+.register {
+  margin-top: 8rem;
+}
+.signin-btn,
+.register-btn {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+
+.register {
+  margin-top: 0.4rem;
+}
+
 .logo {
+  align-self: end;
   display: flex;
+  justify-content: flex-start;
   align-items: center;
   gap: 0.5rem;
   width: 60%;
@@ -47,14 +147,20 @@ body {
   font-size: 5rem;
 }
 .logo-txt {
-  width: 50%;
+  width: 40%;
   font-size: 1.3rem;
   line-height: 1.1;
 }
 
+.icon-google {
+  height: 1.6rem;
+}
+
 .left-side {
-  padding-top: 5rem;
-  padding-bottom: 2rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  display: grid;
+  grid-template-rows: repeat(3, min-content) 1fr;
 }
 
 .txt-file {
@@ -63,7 +169,7 @@ body {
 }
 
 .items-pic {
-  transform: translate(-10%, 10%);
+  transform: translateX(-10%);
 }
 
 .main-items {
@@ -73,4 +179,5 @@ body {
 
 .wrapper {
   max-width: 192rem;
+  margin-inline: auto;
 }
