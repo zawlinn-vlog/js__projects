@@ -1,0 +1,18 @@
+//
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  width: 60%;
+  margin-top: 5rem;
+  &-title {
+    font-size: 5rem;
+  }
+
+  &-txt {
+    font-size: 1.3rem;
+    line-height: 1.1;
+  }
+}

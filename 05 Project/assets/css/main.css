@@ -1,0 +1,56 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 75%;
+  line-height: 1.7;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+.txt-title {
+  font-size: 4rem;
+  line-height: 1.1;
+}
+.txt-file {
+  margin: 4rem 0 5rem;
+}
+.txt-desc {
+  padding: 0;
+  font-size: 1.4rem;
+  list-style-position: inside;
+}
+.txt-desc__items {
+  padding: 0.5rem 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 60%;
+  margin-top: 5rem;
+}
+.logo-title {
+  font-size: 5rem;
+}
+.logo-txt {
+  font-size: 1.3rem;
+  line-height: 1.1;
+}
+
+.left-side {
+  padding-top: 5rem;
+}
+
+.txt-file {
+  display: flex;
+  gap: 1rem;
+}

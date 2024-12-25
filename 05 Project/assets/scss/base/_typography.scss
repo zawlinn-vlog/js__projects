@@ -1,0 +1,23 @@
+//
+
+.txt {
+  &-title {
+    font-size: 4rem;
+    line-height: 1.1;
+  }
+
+  &-file {
+    margin: 4rem 0 5rem;
+  }
+
+  &-desc {
+    padding: 0;
+    // list-style-image: ;
+    font-size: 1.4rem;
+    list-style-position: inside;
+
+    &__items {
+      padding: 0.5rem 0;
+    }
+  }
+}
