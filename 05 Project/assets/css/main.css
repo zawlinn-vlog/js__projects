@@ -121,16 +121,16 @@ a {
 }
 
 .signin,
-.register {
+.signup {
   margin-top: 8rem;
 }
 .signin-btn,
-.register-btn {
+.signup-btn {
   font-size: 1.4rem;
   text-transform: uppercase;
 }
 
-.register {
+.signup {
   margin-top: 0.4rem;
 }
 
@@ -181,15 +181,79 @@ a {
 }
 .modals-container {
   width: 30%;
-  background-color: #dcdcdc;
+  background-color: #efefef;
   border-radius: 0.8rem;
   padding: 3rem 5rem;
+  overflow: hidden;
   position: absolute;
   z-index: 3;
+}
+.modals-container > * {
+  flex: 1 0 100%;
+  display: none;
+}
+.modals-container > *.active {
+  display: block;
 }
 .modals.active {
   opacity: 1;
   visibility: visible;
+}
+
+.forms-signin {
+  gap: 3rem;
+  margin-top: 4rem;
+}
+.forms-signin__btn {
+  font-size: 1.4rem;
+}
+.forms-group {
+  position: relative;
+}
+.forms-label {
+  position: absolute;
+  left: 1.3rem;
+  top: 23%;
+  transform: translateY(-50%);
+  transition: all 0.3s;
+  font-size: 1.2rem;
+  color: #ababab;
+  text-transform: capitalize;
+  letter-spacing: 0.002rem;
+}
+.forms-control {
+  width: 100%;
+  padding: 2.4rem 3rem 1.5rem;
+  margin-inline: auto;
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+  font-size: 1.4rem;
+  color: #898989;
+  transition: all 0.3;
+}
+.forms-control::placeholder {
+  font-size: 1.4rem;
+  color: #ababab;
+  text-transform: capitalize;
+  letter-spacing: 0.005rem;
+}
+.forms-control:placeholder-shown {
+  padding: 1.3rem 2rem;
+}
+.forms-control:placeholder-shown ~ .forms-label {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.form-check-input {
+  font-size: 1.4rem;
+}
+
+.form-check-label {
+  font-size: 1.6rem;
+  color: #787878;
+  margin-inline-start: 1rem;
 }
 
 .left-side {

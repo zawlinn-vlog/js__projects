@@ -114,9 +114,9 @@
                 <button class="btn btn-light py-3 signin-btn">Sign In</button>
               </div>
               <hr />
-              <div class="d-grid register">
-                <button class="btn btn-light py-3 register-btn">
-                  Register
+              <div class="d-grid signup">
+                <button class="btn btn-light py-3 signup-btn">
+                  Sign up
                 </button>
               </div>
             </div>
@@ -127,23 +127,65 @@
 
     <div class="modals active">
       <div class="modals-shadow"></div>
-      <div class="modals-container">
-        <div class="container" id="signin">
+      <div class="modals-container ">
+        <!-- SIGN IN -->
+        <div class="modals-items container active" id="signin">
           <h3 class="text-center text-primary text-uppercase">Sign In</h4>
 
-            <form action="" class="signin-form d-grid gap-4">
-              <div class="form-group">
-                <label for="username" class="form-label ">Username</label>
-                <input type="text" name="" id="username" class="form-control">
+            <form action="" class="forms-signin d-grid mb-4">
+              <div class="forms-group">
+                
+                <input type="text" name="" id="username" class="forms-control" placeholder="Username">
+                <label for="username" class="forms-label ">Username</label>
               </div>
-              <div class="form-group">
-                <label for="password" class="form-label ">password</label>
-                <input type="password" name="" id="password" class="form-control">
+              <div class="forms-group">
+               
+                <input type="password" name="" id="password" class="forms-control" placeholder="password"> 
+                <label for="password" class="forms-label ">password</label>
               </div>
+              <!-- <div class="form-check form-switch d-flex align-items-center">
+                <input type="checkbox" name="" id="remember" class="form-check-input">
+                <label for="remember" class="form-check-label">Remember Me</label>
+              </div> -->
               <div class="d-grid">
-                <button type="submit" class="btn btn-primary text-uppercase">Sign in</button>
+                <button type="submit" class="btn btn-primary py-3 text-uppercase forms-signin__btn">Sign in</button>
               </div>
             </form>
+
+            <hr>
+            <p class="text-muted text-center lead">Don't you have an Account <a href="javascript:void(0)" class="text-primary ms-1">Sign Up</a></p>
+        </div>
+        <!-- SIGN UP -->
+        <div class="modals-items container" id="signup">
+          <h3 class="text-center text-primary text-uppercase">Sign Up</h4>
+
+            <form action="" class="forms-signin d-grid mb-4">
+              <div class="forms-group">
+                
+                <input type="text" name="" id="username" class="forms-control" placeholder="Username">
+                <label for="username" class="forms-label ">Username</label>
+              </div>
+              <div class="forms-group">
+               
+                <input type="password" name="" id="password" class="forms-control" placeholder="password"> 
+                <label for="password" class="forms-label ">password</label>
+              </div>
+              <div class="forms-group">
+               
+                <input type="email" name="" id="email" class="forms-control" placeholder="Email"> 
+                <label for="email" class="forms-label ">Email</label>
+              </div>
+              <!-- <div class="form-check form-switch d-flex align-items-center">
+                <input type="checkbox" name="" id="remember" class="form-check-input">
+                <label for="remember" class="form-check-label">Remember Me</label>
+              </div> -->
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary py-3 text-uppercase forms-signin__btn">Sign up</button>
+              </div>
+            </form>
+
+            <hr>
+            <p class="text-muted text-center lead">If you have an Account <a href="javascript:void(0)" class="text-primary ms-1">Sign in</a></p>
         </div>
       </div>
     </div>

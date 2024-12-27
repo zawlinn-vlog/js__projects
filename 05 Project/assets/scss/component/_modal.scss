@@ -33,17 +33,95 @@
   &-container {
     width: 30%;
     // height: 6rem;
-    background-color: #dcdcdc;
+    background-color: #efefef;
     border-radius: 0.8rem;
     padding: 3rem 5rem;
+    overflow: hidden;
 
     position: absolute;
     // left: -100%;s
     z-index: 3;
+
+    & > * {
+      flex: 1 0 100%;
+      display: none;
+
+      &.active {
+        display: block;
+      }
+    }
   }
 
   &.active {
     opacity: 1;
     visibility: visible;
   }
+}
+
+.forms {
+  &-signin {
+    gap: 3rem;
+    margin-top: 4rem;
+
+    &__btn {
+      font-size: 1.4rem;
+    }
+  }
+
+  &-group {
+    position: relative;
+  }
+
+  &-label {
+    position: absolute;
+    left: 1.3rem;
+    top: 23%;
+    transform: translateY(-50%);
+
+    transition: all 0.3s;
+
+    font-size: 1.2rem;
+    color: #ababab;
+    text-transform: capitalize;
+    letter-spacing: 0.002rem;
+  }
+
+  &-control {
+    width: 100%;
+    padding: 2.4rem 3rem 1.5rem;
+    margin-inline: auto;
+
+    border: none;
+    border-radius: 0.5rem;
+    outline: none;
+    font-size: 1.4rem;
+    color: #898989;
+
+    transition: all 0.3;
+
+    &::placeholder {
+      font-size: 1.4rem;
+      color: #ababab;
+      text-transform: capitalize;
+      letter-spacing: 0.005rem;
+    }
+
+    &:placeholder-shown {
+      padding: 1.3rem 2rem;
+    }
+  }
+  &-control:placeholder-shown ~ &-label {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.form-check-input {
+  font-size: 1.4rem;
+}
+
+.form-check-label {
+  font-size: 1.6rem;
+  color: #787878;
+  margin-inline-start: 1rem;
 }
