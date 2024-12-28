@@ -5,11 +5,14 @@ $(document).ready(function () {
     return e.target.classList.contains(str);
   }
   $("body").on("click", function (e) {
-    console.log(checkClass(e, "signin-btn"));
+    // console.log(checkClass(e, "signin-btn"));
 
-    if (checkClass(e, "signin-btn") || checkClass(e, "signup-btn")) {
+    if ($(e.target).data("id")) {
       $(".modals").addClass("active");
-      const parent = $(e.target).parent().attr("class").split(" ")[1];
+
+      const parent = $(e.target).data("id");
+
+      // console.log(parent);
 
       $(".modals-items").each((ind, el) => {
         $(el).removeClass("active");
