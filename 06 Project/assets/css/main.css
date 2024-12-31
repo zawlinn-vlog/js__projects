@@ -1,3 +1,10 @@
+:root {
+  --gray-1-color: #eee;
+  --border-1-color: #cdcdcd;
+  --border-2-color: #efefef;
+  --bg-color: #f9f9f9;
+}
+
 *,
 *::before,
 *::after {
@@ -21,64 +28,63 @@ a {
   color: #777;
 }
 
-.navbars {
-  width: 100%;
+.tabs-wrapper {
+  width: 72rem;
+  margin-inline: auto;
 }
+.tabs-content {
+  border: 0.2rem solid #cdcdcd;
+  border-top-color: transparent;
+  padding: 3rem;
+  min-height: 20rem;
+  margin-top: -0.3rem;
+}
+
 .navbars-nav {
   list-style: none;
-  display: flex;
+  padding: 0;
+  margin: 0;
 }
 .navbars-items {
+  padding: 3rem 0;
   flex: 1 0 10rem;
-  height: 13rem;
-  background-color: #eee;
-  border: 0.1rem solid #cdcdcd;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.3s;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  --height: defaultValue;
+  --top: defaultValue;
+  --b-color: defaultValue;
+  --bg-color: defaultValue;
   position: relative;
 }
-.navbars-items:hover {
-  background-color: #f9f9f9;
-}
-.navbars-items.active {
-  border: none;
-  background-color: transparent;
-}
-.navbars-items.active:before {
+.navbars-items::before {
   content: "";
   display: block;
   width: 100%;
-  height: calc(100% + 2rem);
-  border: 0.1rem solid #cdcdcd;
-  border-bottom-color: transparent;
-  border-top: 0.4rem solid #cdcdcd;
+  height: var(--height);
+  background-color: var(--bg-color);
+  border-top: 0.4rem solid var(--b-color);
+  border-left: 0.2rem solid var(--b-color);
+  border-right: 0.2rem solid var(--b-color);
   position: absolute;
   left: 0;
-  top: -2rem;
+  top: var(--top);
+  z-index: 1;
+  transition: all 0.3s;
+}
+.navbars-items:hover:before {
+  background-color: var(--bg-color) !important;
 }
 .navbars-link {
-  display: block;
-}
-.navbars-link > * {
-  display: block;
-  text-align: center;
-}
-.navbars-link__txt {
-  font-size: 1.6rem;
-  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 2;
+  font-size: 1.4rem;
   font-weight: 300;
 }
 .navbars-link__icon {
-  font-size: 3rem;
-}
-
-.tabs-wrapper {
-  margin-inline: auto;
-  margin-top: 10rem;
-}
-.tabs-content {
-  border: 0.1rem solid #efefef;
-  border-top-color: transparent;
+  font-size: 2rem;
 }

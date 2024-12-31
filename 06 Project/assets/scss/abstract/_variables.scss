@@ -1,0 +1,19 @@
+//
+
+$gray-1: #eee;
+$border-color__1: #cdcdcd;
+$border-color__2: #efefef;
+$background-color: #f9f9f9;
+
+$colors: (
+  "gray-1": $gray-1,
+  "border-1": $border-color__1,
+  "border-2": $border-color__2,
+  "bg": $background-color,
+);
+
+:root {
+  @each $name, $color in $colors {
+    --#{$name}-color: #{$color};
+  }
+}

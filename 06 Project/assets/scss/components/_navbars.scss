@@ -1,77 +1,82 @@
 //
 
-.navbars {
-  width: 100%;
-  &-nav {
-    list-style: none;
-    display: flex;
+@use "../abstract/function" as fun;
+
+.tabs {
+  &-wrapper {
+    width: 72rem;
+    margin-inline: auto;
   }
 
+  &-content {
+    border: 0.2rem solid #cdcdcd;
+    border-top-color: transparent;
+    padding: 3rem;
+
+    min-height: 20rem;
+    margin-top: -0.3rem;
+  }
+}
+
+.navbars {
+  &-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
   &-items {
+    padding: 3rem 0;
     flex: 1 0 10rem;
-    height: 13rem;
-    background-color: #eee;
-    border: 0.1rem solid #cdcdcd;
+    cursor: pointer;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    transition: background-color 0.3s;
 
-    transition: all 0.3s;
+    --height: defaultValue;
+    --top: defaultValue;
+    --b-color: defaultValue;
+    --bg-color: defaultValue;
+    // border: 0.2rem solid var(--b-color);
 
     position: relative;
 
-    &:hover {
-      background-color: #f9f9f9;
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: var(--height);
+      background-color: var(--bg-color);
+      border-top: 0.4rem solid var(--b-color);
+      border-left: 0.2rem solid var(--b-color);
+      border-right: 0.2rem solid var(--b-color);
+
+      position: absolute;
+      left: 0;
+      top: var(--top);
+      z-index: 1;
+
+      transition: all 0.3s;
     }
 
-    &.active {
-      border: none;
-      background-color: transparent;
-      &:before {
-        content: "";
-        display: block;
-        width: 100%;
-        height: calc(100% + 2rem);
-        border: 0.1rem solid #cdcdcd;
-        border-bottom-color: transparent;
-        border-top: 0.4rem solid #cdcdcd;
-
-        position: absolute;
-        left: 0;
-        top: -2rem;
-      }
+    &:hover:before {
+      background-color: fun.getColor(bg) !important;
     }
   }
 
   &-link {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 
-    & > * {
-      display: block;
-      text-align: center;
-    }
-    &__txt {
-      font-size: 1.6rem;
-      margin-top: 1rem;
-      font-weight: 300;
-    }
+    position: relative;
+    z-index: 2;
+
+    font-size: 1.4rem;
+    font-weight: 300;
 
     &__icon {
-      font-size: 3rem;
+      font-size: 2rem;
     }
-  }
-}
-
-.tabs {
-  &-wrapper {
-    //   max-width: 67rem;
-    margin-inline: auto;
-
-    margin-top: 10rem;
-  }
-  &-content {
-    border: 0.1rem solid #efefef;
-    border-top-color: transparent;
   }
 }
