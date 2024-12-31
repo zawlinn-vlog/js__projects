@@ -6,11 +6,9 @@ $(document).ready(function () {
       "--height": "100%",
       "--top": "0",
       "--b-color": "transparent",
-      "--bg-color": "#eee",
+      "--bg-color": "#bcbcbc",
     });
   }
-
-  console.log($(".navbars-items").get(0));
 
   function changeElStyle(index) {
     $($(".navbars-items").get(index)).css({
