@@ -1,0 +1,48 @@
+a {
+  text-decoration: none;
+}
+
+.navbar-form__search {
+  background-color: #434343;
+  padding: 0.5rem 1rem;
+  border: none;
+}
+.navbar-form__search:focus {
+  background-color: #434343;
+  box-shadow: none;
+}
+.navbar-form__search::placeholder {
+  color: #ababab;
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+}
+.nav-link:hover {
+  background-color: #434343;
+}
+.nav-icon {
+  font-size: 1.3rem;
+}
+.nav-noti {
+  font-size: 1.3rem;
+  background-color: #343434;
+  width: 2.8rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+}
+.nav-noti:hover {
+  background-color: #434343;
+}
+.nav-noti__img {
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.nav-noti__img:hover {
+  transform: scale(1.2);
+}

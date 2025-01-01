@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project | Search and Sorting by Alphabet</title>
+
+    <!-- BOOTSTRAP -->
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+
+    <!--  -->
+    <link rel="stylesheet" href="./assets/fontawesomepro/css/all.css" />
+
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="./assets/css/main.css" />
+  </head>
+  <body>
+    <main class="wrapper bg-light vh-100">
+      <div class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <div class="d-flex gap-2 align-items-center w-100">
+            <a href="javascript:void(0)" class="navbar-brand">LOGO</a>
+
+            <!--  -->
+            <div class="navbar-form form-group">
+              <input
+                type="search"
+                name=""
+                id=""
+                class="form-control rounded-pill navbar-form__search text-light"
+                placeholder="Search Here"
+              />
+            </div>
+
+            <div class="navbar-tabs ms-5">
+              <div class="d-flex gap-3">
+                <a
+                  href="javascript:void(0)"
+                  class="nav-link text-light rounded"
+                >
+                  <i class="fal fa-home-lg-alt nav-icon"></i>
+                </a>
+                <a
+                  href="javascript:void(0)"
+                  class="nav-link text-light rounded"
+                >
+                  <i class="fal fa-user-friends nav-icon"></i>
+                </a>
+                <a
+                  href="javascript:void(0)"
+                  class="nav-link text-light rounded"
+                >
+                  <i class="fal fa-camera-movie nav-icon"></i>
+                </a>
+                <a
+                  href="javascript:void(0)"
+                  class="nav-link text-light rounded"
+                >
+                  <i class="far fa-store nav-icon"></i>
+                </a>
+                <a
+                  href="javascript:void(0)"
+                  class="nav-link text-light rounded"
+                >
+                  <i class="far fa-users nav-icon"></i>
+                </a>
+              </div>
+            </div>
+
+            <!--  -->
+            <div class="navbar-noti ms-auto">
+              <div class="d-flex gap-2 align-items-center">
+                <a href="javascript:void(0)" class="nav-noti text-light">
+                  <i class="fas fa-th"></i>
+                </a>
+                <a href="javascript:void(0)" class="nav-noti text-light">
+                  <i class="fab fa-facebook-messenger"></i>
+                </a>
+                <a href="javascript:void(0)" class="nav-noti text-light">
+                  <i class="fas fa-bell"></i>
+                </a>
+
+                <div class="rounded-circle overflow-hidden nav-noti__profile">
+                  <img
+                    src="https://via.placeholder.com/50"
+                    alt=""
+                    class="rounded-circle nav-noti__img"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>
