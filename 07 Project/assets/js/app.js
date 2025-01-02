@@ -4,7 +4,8 @@ $(document).ready(function () {
   let obj,
     sort = false,
     search = false,
-    newArr;
+    newArr,
+    res;
 
   function fetchData(filterData = "") {
     let html;
@@ -28,9 +29,9 @@ $(document).ready(function () {
   function displayData(arrObj) {
     let html, arr;
 
-    arr = sort ? [...arrObj].sort((a, b) => a.name.localeCompare(b.name)) : obj;
-
-    // console.log(arr);
+    arr = sort
+      ? [...arrObj].sort((a, b) => a.name.localeCompare(b.name))
+      : arrObj;
 
     console.log(arr);
 
@@ -62,19 +63,17 @@ $(document).ready(function () {
 
   function dataFilter() {
     const filterName = $("#search-input").val().toLowerCase();
+    if ($("#search-input").val() !== "") {
+      search = true;
 
-    // if ($("#search-input").val() !== "") {
-    //   search = true;
-    //   newArr = obj.filter((val) => val.name.toLowerCase().includes(filterName));
+      newArr = obj.filter((val) => val.name.toLowerCase().includes(filterName));
 
-    //   console.log(newArr);
+      displayData(newArr);
 
-    //   displayData(newArr);
-    // } else {
-    //   search = false;
-    //   sort = false;
-    //   displayData(obj);
-    // }
+      return -1;
+    }
+
+    search = false;
   }
 
   /* SHOW / HIDE POPUP BOX */
@@ -84,69 +83,40 @@ $(document).ready(function () {
   }
 
   $(document).on("click", function (e) {
-    console.log(e.target.closest(".popup-search__data"));
-    if (
-      e.target.classList.contains("navbar-form__search") ||
-      e.target.closest(".popup-search__data")
-    ) {
+    if (e.target.id == "navbar-search" || e.target.id == "search-input") {
       hidePopup();
       $(".popup").addClass("active");
 
-      $("#search-input").focus();
-
-      // displayData(obj);
+      document.querySelector("#search-input").focus();
 
       console.log("bubbling");
-    } else {
-      //
-      hidePopup();
+    } else if (e.target.classList.contains("fa-sort-alpha-up")) {
+      sort = sort ? false : true;
+
+      res = search ? newArr : [];
+
+      console.log(res);
+
+      displayData(res);
+    } else if (e.target.classList.contains("fa-times")) {
+      const searchText = $(e.target).parent().prev().text();
+      const searchInd = newArr.findIndex(
+        (val) => val.name.toLowerCase() == searchText.toLowerCase()
+      );
+
+      console.log(searchInd);
+
+      newArr.splice(searchInd, 1);
+
+      displayData(newArr);
+
+      // $(".popup").addClass("active");
     }
-
-    // // console.log(obj);
-
-    // if (e.target.classList.contains("fa-times")) {
-    //   const res = search ? newarr : obj;
-
-    //   const index = res.findIndex(
-    //     (val) => val.name == $(e.target).parent().prev().text()
-    //   );
-
-    //   console.log(index);
-
-    //   res.splice(index, 1); // index and length and Applied Obj
-
-    //   displayData(res);
-
-    //   //   console.log(obj);
-
-    //   //   displayData();
-    // }
-
-    // if (e.target.id == "search-input") {
-    //   dataFilter();
-    // }
-
-    // if (
-    //   e.target.closest(".popup-search__sorting") ||
-    //   (e.target.classList.contains("fa-sort-alpha-up") && !sort)
-    // ) {
-    //   //   displayData(obj);
-
-    //   sort ? (sort = false) : (sort = true);
-
-    //   console.log(sort);
-
-    //   const res = search ? newarr : obj;
-
-    //   displayData(res);
-    // }
   });
 
   /* FILTER */
 
   $(document).on("keyup", function (e) {
-    // console.log(e.key);
-
     dataFilter();
   });
 });
