@@ -20,8 +20,9 @@
   <body>
     <main class="wrapper bg-light vh-100">
       <div class="navbar navbar-dark bg-dark">
-        <div class="container-fluid">
-          <div class="d-flex gap-2 align-items-center w-100">
+        <div class="container-fluid position-relative">
+          <!-- Main NAV -->
+          <nav class="d-flex gap-2 align-items-center w-100">
             <a href="javascript:void(0)" class="navbar-brand">LOGO</a>
 
             <!--  -->
@@ -29,7 +30,7 @@
               <input
                 type="search"
                 name=""
-                id=""
+                id="navbar-search"
                 class="form-control rounded-pill navbar-form__search text-light"
                 placeholder="Search Here"
               />
@@ -91,6 +92,47 @@
                   />
                 </div>
               </div>
+            </div>
+          </nav>
+
+          <!-- Popup Search -->
+          <div class="popup popup-search bg-dark rounded">
+            <div class="popup-search__form">
+              <div class="d-flex align-items-center gap-2 h-100">
+                <!-- BACK ARROW -->
+                <div
+                  class="popup-back rounded-circle d-flex align-items-center justify-content-center"
+                >
+                  <i class="fas fa-arrow-left popup-back__icon text-light"></i>
+                </div>
+                <!-- SEARCH FORM -->
+                <div class="popup-search__box">
+                  <input
+                    type="search"
+                    name=""
+                    id=""
+                    class="form-control navbar-form__search rounded-pill text-light"
+                    autofocus="true"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="popup-search__data">
+              <div class="d-flex p-2 popup-search__sorting">
+                <span class="ms-auto">
+                  <i class="fas fa-sort-alpha-up text-light"></i>
+                </span>
+              </div>
+              <ul class="popup-data">
+                <!-- <li
+                  class="popup-data__list text-light d-flex align-items-center justify-content-between rounded"
+                >
+                  <span class="popup-data__name">Ko Maung Gyi</span>
+                  <span class="close">
+                    <i class="fas fa-times text-light"></i>
+                  </span>
+                </li> -->
+              </ul>
             </div>
           </div>
         </div>
