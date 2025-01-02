@@ -2,7 +2,9 @@
 
 $(document).ready(function () {
   let obj,
-    sort = false;
+    sort = false,
+    search = false,
+    newArr;
 
   function fetchData(filterData = "") {
     let html;
@@ -26,11 +28,9 @@ $(document).ready(function () {
   function displayData(arrObj) {
     let html, arr;
 
-    arr = arrObj.map((val) => val.name);
+    arr = sort ? [...arrObj].sort((a, b) => a.name.localeCompare(b.name)) : obj;
 
-    if (sort) {
-      arr.sort();
-    }
+    // console.log(arr);
 
     console.log(arr);
 
@@ -42,7 +42,7 @@ $(document).ready(function () {
           <li
                   class="popup-data__list text-light d-flex align-items-center justify-content-between rounded"
                 >
-                  <span class="popup-data__name text-capitalize">${val}</span>
+                  <span class="popup-data__name text-capitalize">${val.name}</span>
                   <span class="close">
                     <i class="fas fa-times text-light"></i>
                   </span>
@@ -56,6 +56,27 @@ $(document).ready(function () {
     });
   }
 
+  //
+
+  /* */
+
+  function dataFilter() {
+    const filterName = $("#search-input").val().toLowerCase();
+
+    // if ($("#search-input").val() !== "") {
+    //   search = true;
+    //   newArr = obj.filter((val) => val.name.toLowerCase().includes(filterName));
+
+    //   console.log(newArr);
+
+    //   displayData(newArr);
+    // } else {
+    //   search = false;
+    //   sort = false;
+    //   displayData(obj);
+    // }
+  }
+
   /* SHOW / HIDE POPUP BOX */
 
   function hidePopup() {
@@ -63,55 +84,69 @@ $(document).ready(function () {
   }
 
   $(document).on("click", function (e) {
-    // console.log(
-    //   $(e.target),
-    //   $(e.target).parents(".popup-data"),
-    //   e.target.classList.contains("navbar-form__search") ||
-    //     Boolean(e.target.closest(".popup-data"))
-    // );
-
+    console.log(e.target.closest(".popup-search__data"));
     if (
       e.target.classList.contains("navbar-form__search") ||
-      Boolean(e.target.closest(".popup-search__data"))
+      e.target.closest(".popup-search__data")
     ) {
       hidePopup();
       $(".popup").addClass("active");
 
-      displayData(obj);
+      $("#search-input").focus();
+
+      // displayData(obj);
+
+      console.log("bubbling");
     } else {
-      console.log(e.target);
+      //
       hidePopup();
     }
 
-    // console.log(obj);
+    // // console.log(obj);
 
-    if (e.target.classList.contains("fa-times")) {
-      const index = obj.findIndex(
-        (val) => val.name == $(e.target).parent().prev().text()
-      );
+    // if (e.target.classList.contains("fa-times")) {
+    //   const res = search ? newarr : obj;
 
-      console.log(index);
+    //   const index = res.findIndex(
+    //     (val) => val.name == $(e.target).parent().prev().text()
+    //   );
 
-      obj.splice(index, 1); // index and length
+    //   console.log(index);
 
-      displayData(obj);
+    //   res.splice(index, 1); // index and length and Applied Obj
 
-      //   console.log(obj);
+    //   displayData(res);
 
-      //   displayData();
-    }
+    //   //   console.log(obj);
 
-    if (
-      e.target.closest(".popup-search__sorting") ||
-      (e.target.classList.contains("fa-sort-alpha-up") && !sort)
-    ) {
-      console.log("click");
+    //   //   displayData();
+    // }
 
-      //   displayData(obj);
+    // if (e.target.id == "search-input") {
+    //   dataFilter();
+    // }
 
-      sort = true;
+    // if (
+    //   e.target.closest(".popup-search__sorting") ||
+    //   (e.target.classList.contains("fa-sort-alpha-up") && !sort)
+    // ) {
+    //   //   displayData(obj);
 
-      displayData(obj);
-    }
+    //   sort ? (sort = false) : (sort = true);
+
+    //   console.log(sort);
+
+    //   const res = search ? newarr : obj;
+
+    //   displayData(res);
+    // }
+  });
+
+  /* FILTER */
+
+  $(document).on("keyup", function (e) {
+    // console.log(e.key);
+
+    dataFilter();
   });
 });
