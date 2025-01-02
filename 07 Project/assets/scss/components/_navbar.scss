@@ -7,9 +7,11 @@ a {
 .navbar {
   height: 4.2rem;
   &-form {
+    width: 75%;
+    transition: all 0.4s;
     &__search {
       background-color: #434343;
-      padding: 0.5rem 1rem;
+      padding: 0.6rem 1.5rem;
 
       border: none;
       //   box-shadow: none;
@@ -33,20 +35,41 @@ a {
       }
     }
   }
-}
 
-.nav {
-  &-link {
-    display: inline-block;
-    padding: 0.8rem 2rem;
+  &-back {
+    background-color: #343434;
+    width: 3.2rem;
+    aspect-ratio: 1 /1;
+    cursor: pointer;
+
+    display: none;
+
+    transition: all 0.3s;
+
+    &__icon {
+      font-size: 1.6rem;
+    }
 
     &:hover {
       background-color: #434343;
     }
   }
+}
+
+.nav {
+  &-link {
+    display: inline-block;
+    padding: 0.8rem 3rem;
+
+    &:hover {
+      background-color: #434343;
+    }
+  }
+
   &-icon {
     font-size: 1.3rem;
   }
+
   &-noti {
     font-size: 1.3rem;
     background-color: #343434;
@@ -76,7 +99,7 @@ a {
 }
 
 .popup {
-  width: 22rem;
+  width: 25rem;
   min-height: 4.2rem;
   max-height: 100vh;
   overflow: hidden;
@@ -84,6 +107,8 @@ a {
 
   opacity: 0;
   visibility: hidden;
+
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
 
   // background-color: #343434;
 
@@ -97,29 +122,6 @@ a {
   &-search {
     &__form {
       height: 4.2rem;
-      border-bottom: 0.1rem solid #555;
-    }
-
-    &__box {
-      // flex: 1;
-      width: 78%;
-    }
-  }
-
-  &-back {
-    background-color: #343434;
-    width: 3.2rem;
-    aspect-ratio: 1 /1;
-    cursor: pointer;
-
-    transition: background-color 0.3s;
-
-    &__icon {
-      font-size: 1.6rem;
-    }
-
-    &:hover {
-      background-color: #434343;
     }
   }
 
@@ -152,5 +154,25 @@ a {
   &.active {
     opacity: 1;
     visibility: visible;
+  }
+}
+
+.pos-fit {
+  position: relative;
+  z-index: 999;
+
+  justify-content: flex-start !important;
+  align-items: center;
+
+  .navbar-brand {
+    display: none;
+  }
+
+  .navbar-back {
+    display: flex;
+  }
+
+  .navbar-form {
+    width: 75%;
   }
 }

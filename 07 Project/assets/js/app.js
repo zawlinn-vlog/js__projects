@@ -1,122 +1,35 @@
 "use strict";
 
 $(document).ready(function () {
-  let obj,
-    sort = false,
-    search = false,
-    newArr,
-    res;
+  /* */
+  function activePopup(e) {
+    $(e.target).parents(".navbar-left").addClass("pos-fit");
 
-  function fetchData(filterData = "") {
-    let html;
-    const xhr = new XMLHttpRequest();
-
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState == 4 && xhr.status == 200) {
-        obj = JSON.parse(xhr.responseText);
-      }
-    };
-
-    xhr.open("GET", "./assets/js/data.json");
-
-    xhr.send();
+    $(".popup").addClass("active");
   }
-
-  fetchData();
-
-  /* Display Data */
-
-  function displayData(arrObj) {
-    let html, arr;
-
-    arr = sort
-      ? [...arrObj].sort((a, b) => a.name.localeCompare(b.name))
-      : arrObj;
-
-    console.log(arr);
-
-    document.querySelector(".popup-data").innerHTML = "";
-
-    arr.forEach((val) => {
-      html = `
-
-          <li
-                  class="popup-data__list text-light d-flex align-items-center justify-content-between rounded"
-                >
-                  <span class="popup-data__name text-capitalize">${val.name}</span>
-                  <span class="close">
-                    <i class="fas fa-times text-light"></i>
-                  </span>
-                </li>
-
-          `;
-
-      document
-        .querySelector(".popup-data")
-        .insertAdjacentHTML("beforeend", html);
-    });
-  }
-
-  //
 
   /* */
 
-  function dataFilter() {
-    const filterName = $("#search-input").val().toLowerCase();
-    if ($("#search-input").val() !== "") {
-      search = true;
+  function removePopup(e) {
+    $(".navbar-left").removeClass("pos-fit");
 
-      newArr = obj.filter((val) => val.name.toLowerCase().includes(filterName));
-
-      displayData(newArr);
-
-      return -1;
-    }
-
-    search = false;
-  }
-
-  /* SHOW / HIDE POPUP BOX */
-
-  function hidePopup() {
     $(".popup").removeClass("active");
   }
 
+  /*  */
   $(document).on("click", function (e) {
-    if (e.target.id == "navbar-search" || e.target.id == "search-input") {
-      hidePopup();
-      $(".popup").addClass("active");
+    if (e.target.id == "navbar-search") {
+      console.log("click");
+      activePopup(e);
 
-      document.querySelector("#search-input").focus();
-
-      console.log("bubbling");
-    } else if (e.target.classList.contains("fa-sort-alpha-up")) {
-      sort = sort ? false : true;
-
-      res = search ? newArr : [];
-
-      console.log(res);
-
-      displayData(res);
-    } else if (e.target.classList.contains("fa-times")) {
-      const searchText = $(e.target).parent().prev().text();
-      const searchInd = newArr.findIndex(
-        (val) => val.name.toLowerCase() == searchText.toLowerCase()
-      );
-
-      console.log(searchInd);
-
-      newArr.splice(searchInd, 1);
-
-      displayData(newArr);
-
-      // $(".popup").addClass("active");
+      return false;
     }
-  });
 
-  /* FILTER */
+    if (e.target.classList.contains("fa-times")) {
+      console.log("close");
+      return false;
+    }
 
-  $(document).on("keyup", function (e) {
-    dataFilter();
+    removePopup(e);
   });
 });
