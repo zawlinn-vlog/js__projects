@@ -49,8 +49,8 @@ $(document).ready(function () {
                   <span class="popup-data__name text-capitalize">${
                     val.name
                   }</span>
-                  <span class="close">
-                    <i class="fas fa-times text-light"></i>
+                  <span class="close badge text-bg-light">
+                    ${val.count ? val.count : ""}
                   </span>
                 </li>
 
