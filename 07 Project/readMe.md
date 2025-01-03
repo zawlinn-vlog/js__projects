@@ -4,7 +4,7 @@
 
 #### PROJECT SIMPLE &mdash;
 
-![PROJECT_IMG](./assets/img/sample.png)
+![PROJECT_IMG](./assets/img/sample01.png)
 
 <br>
 
