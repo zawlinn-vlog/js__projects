@@ -26,16 +26,18 @@
             <div class="row">
               <!-- LEFT SIDE  -->
               <div
-                class="col-3 d-flex gap-2 justify-content-end align-items-center navbar-left"
+                class="col-3 d-flex justify-content-end align-items-center navbar-left pe-5"
               >
                 <!--  LOGO -->
 
-                <a href="javascript:void(0)" class="navbar-brand">LOGO</a>
+                <a href="javascript:void(0)" class="navbar-brand ms-auto m-0"
+                  >LOGO</a
+                >
 
                 <!-- BACK ICON -->
 
                 <div
-                  class="navbar-back rounded-circle align-items-center justify-content-center"
+                  class="navbar-back rounded-circle align-items-center justify-content-center ms-auto"
                 >
                   <i class="fas fa-arrow-left navbar-back__icon text-light"></i>
                 </div>
@@ -49,6 +51,7 @@
                     id="navbar-search"
                     class="form-control rounded-pill navbar-form__search text-light"
                     placeholder="Search Here"
+                    autocomplete="off"
                   />
                 </div>
               </div>
@@ -92,7 +95,7 @@
 
               <!-- RIGHT SIDE  -->
               <div class="col-2 navbar-noti ms-auto">
-                <div class="d-flex gap-3 align-items-center">
+                <div class="d-flex gap-2 align-items-center">
                   <a href="javascript:void(0)" class="nav-noti text-light">
                     <i class="fas fa-th"></i>
                   </a>
@@ -122,9 +125,9 @@
             </div>
             <div class="popup-search__data">
               <div class="d-flex p-2 popup-search__sorting">
-                <span class="ms-auto">
-                  <i class="fas fa-sort-alpha-up text-light"></i>
-                </span>
+                <button class="ms-auto sorting" disabled>
+                  <i class="fas fa-sort-alpha-up"></i>
+                </button>
               </div>
               <ul class="popup-data">
                 <!-- <li
