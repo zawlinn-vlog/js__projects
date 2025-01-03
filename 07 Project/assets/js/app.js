@@ -73,11 +73,14 @@ $(document).ready(function () {
   function emptyEl() {
     if (localStorage.getItem("clickHistory")) {
       his = JSON.parse(localStorage.getItem("clickHistory"));
-
+      // console.log(his);
       createEl(his);
+      return -1;
     }
 
+    his = [];
     sort = false;
+    createEl(his);
   }
 
   /*  REMOVE POPUP */
