@@ -75,7 +75,7 @@ $(document).ready(function () {
     if (localStorage.getItem("clickHistory")) {
       his = JSON.parse(localStorage.getItem("clickHistory"));
       // console.log(his);
-      createEl(his);
+      createEl(his.reverse());
       return -1;
     }
 
@@ -107,7 +107,7 @@ $(document).ready(function () {
         if (localStorage.getItem("clickHistory")) {
           his = JSON.parse(localStorage.getItem("clickHistory"));
 
-          createEl(his);
+          createEl(his.reverse());
 
           $(".sorting").removeAttr("disabled");
           $(".fa-sort-alpha-up").css({
@@ -174,11 +174,17 @@ $(document).ready(function () {
 
           curObj.count += 1;
 
+          curObj.dateTime = new Date().toISOString();
+
           his.push(curObj);
 
           localStorage.setItem("clickHistory", JSON.stringify(his));
 
           console.log(curObj, his);
+
+          searching = false;
+
+          removePopup();
 
           return -1;
         }
