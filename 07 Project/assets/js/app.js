@@ -5,6 +5,7 @@ $(document).ready(function () {
     newArr,
     sort = false,
     searching = false,
+    count = 1,
     his,
     res;
 
@@ -137,8 +138,9 @@ $(document).ready(function () {
 
         // console.log(new Date().toISOString());
 
-        const curObj = {
+        let curObj = {
           name: clickData,
+          count,
           dateTime: new Date().toISOString(),
         };
 
@@ -152,10 +154,34 @@ $(document).ready(function () {
           searching = false;
 
           removePopup();
+
           return -1;
         }
 
         his = JSON.parse(localStorage.getItem("clickHistory"));
+
+        if (
+          his.find((val) => val.name.toLowerCase() == clickData.toLowerCase())
+        ) {
+          console.log("data exist");
+          const getIdx = his.findIndex((val) =>
+            val.name.toLowerCase().includes(clickData.toLowerCase())
+          );
+
+          [curObj] = his.splice(getIdx, 1);
+
+          console.log(count);
+
+          curObj.count += 1;
+
+          his.push(curObj);
+
+          localStorage.setItem("clickHistory", JSON.stringify(his));
+
+          console.log(curObj, his);
+
+          return -1;
+        }
 
         his.push(curObj);
 
