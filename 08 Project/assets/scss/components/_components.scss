@@ -1,0 +1,84 @@
+//
+
+.form {
+  &-wrapper {
+    align-self: flex-start;
+  }
+}
+.img {
+  &-card {
+    position: relative;
+
+    transition: all 0.3s;
+
+    &:hover {
+      box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    }
+  }
+  &-wrapper {
+    height: 60vh;
+  }
+  &-container {
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    // transition: all 0.5s;
+  }
+
+  &-thumbnail {
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    backface-visibility: hidden;
+    transform-origin: center center;
+
+    transition: all 0.5s;
+  }
+
+  &-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 0.5rem;
+    backdrop-filter: blur(0.1rem) brightness(80%);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: all 0.5s;
+  }
+
+  &-btn {
+    font-size: 0.7rem;
+    padding: 0.3rem 1.5rem;
+    letter-spacing: 0.02rem;
+    text-transform: capitalize;
+
+    transform: translateY(0.5rem);
+    opacity: 0;
+    visibility: hidden;
+
+    transition: all 0.3s ease-in 0.1s;
+  }
+
+  &-card:hover &-cover {
+    opacity: 1;
+    visibility: visible;
+  }
+  &-card:hover &-btn {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+  &-card:hover &-thumbnail {
+    transform: scale(1.2);
+  }
+}

@@ -4,9 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "live-server",
-    "compile:css": "sass ./assets/scss/main.scss ./assets/css/main.css -w --no-source-map ",
-    "server-json": "json-server --watch ./assets/js/myData.js --port 8080 --routes ./assets/js/routes.json",
+    "server": "live-server ./public",
+    "compile:css": "sass ./assets/scss/main.scss ./public/css/main.css -w --no-source-map ",
+    "server-json": "json-server --watch ./assets/js/photo.json --port 8080 --routes ./assets/js/routes.json",
     "start": "npm-run-all --parallel server compile:css server-json"
   },
   "keywords": [],

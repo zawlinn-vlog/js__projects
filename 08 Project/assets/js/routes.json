@@ -1,3 +1,6 @@
 {
-  "/api/v1/*": "/$1"
+  "/api/v1/*": "/$1",
+  "/api/v1/:id": "/:id",
+  "/api/v1/create": "/photo",
+  "/api/update/:id": "/photo/:id"
 }

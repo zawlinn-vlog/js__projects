@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project | LightBox</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <main class="wrapper p-5">
+      <div class="container">
+        <div class="row gap-5">
+          <!-- FORM SIDE -->
+          <div
+            class="col-12 col-lg-4 order-2 order-lg-1 o border border-primary p-4 pb-5 rounded-3 form-wrapper"
+          >
+            <h3 class="text-primary mb-5">POST Photos &mdash;</h3>
+            <form
+              action="#"
+              class="photo-form d-grid gap-4"
+              enctype="multipart/form-data"
+            >
+              <div class="form-floating">
+                <input
+                  type="text"
+                  name=""
+                  id="title"
+                  class="form-control form-title"
+                  placeholder="Title"
+                />
+                <label for="title" class="form-label">Title</label>
+              </div>
+
+              <div class="form-floating">
+                <input
+                  type="text"
+                  name=""
+                  id="authorname"
+                  class="form-control form-author"
+                  placeholder="authorname"
+                />
+                <label for="authorname" class="form-label">Author Name</label>
+              </div>
+
+              <div class="form-floating">
+                <textarea
+                  name=""
+                  id="imgPath"
+                  class="form-control"
+                  placeholder="img path"
+                  style="height: 7rem"
+                ></textarea>
+                <label for="imgPath" class="form-label">Image Path</label>
+              </div>
+
+              <div class="d-grid mt-3">
+                <button class="btn btn-primary py-2">Upload</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- CONTENT SIDE -->
+          <div
+            class="col-12 col-lg-7 order-1 order-lg-2 border border-primary rounded-3 py-3"
+          >
+            <h3 class="text-primary mb-4 ms-3">All Photo &mdash;</h3>
+
+            <div class="overflow-hidden img-wrapper">
+              <div class="overflow-auto h-100 px-4">
+                <div class="row">
+                  <div class="col-4">
+                    <div class="img-card">
+                      <figure class="img-container">
+                        <img
+                          src="https://picsum.photos/800/300?random=1"
+                          alt=""
+                          class="img-thumbnail"
+                        />
+                      </figure>
+                      <div class="img-cover">
+                        <button class="btn btn-warning img-btn">preview</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- MODAL BOX -->
+    <div class="modals" id="modalPhoto">
+      <div class="modals-content rounded-3">
+        <div class="modals-header mb-3">
+          <h1 class="modals-title">Title &mdash;</h1>
+        </div>
+        <div class="modals-body">
+          <figure class="modals-img__wrapper border rounded-3 p-1">
+            <img
+              src="https://picsum.photos/800/300?random=1"
+              alt=""
+              class="modals-img__pic rounded-3"
+            />
+          </figure>
+
+          <a
+            href="javascript:void(0)"
+            class="modals-indicator modals-indicator__left"
+          >
+            <i class="fas fa-chevron-left"></i>
+          </a>
+          <a
+            href="javascript:void(0)"
+            class="modals-indicator modals-indicator__right"
+          >
+            <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+        <div class="modals-footer">
+          <div class="d-flex justify-content-between mt-4">
+            <button class="btn btn-primary px-5">Edit</button>
+            <button class="btn btn-danger px-5">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
