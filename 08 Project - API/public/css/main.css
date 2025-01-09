@@ -11919,8 +11919,7 @@ textarea.form-control-lg {
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0;
-  visibility: hidden;
+  transition: all 0.4s;
 }
 .modals-content {
   padding: 3rem;
@@ -11954,4 +11953,9 @@ textarea.form-control-lg {
 }
 .modals-indicator__right {
   right: 0.3rem;
+}
+
+.hide {
+  opacity: 0;
+  visibility: hidden;
 }

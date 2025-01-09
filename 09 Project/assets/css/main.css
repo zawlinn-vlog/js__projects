@@ -1,0 +1,7 @@
+/* */
+
+.completed {
+  text-decoration: line-through;
+  text-decoration-style: solid;
+  text-decoration-color: crimson;
+}
