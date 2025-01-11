@@ -130,7 +130,7 @@ $(document).ready(function () {
   $(document).on("contextmenu", function (e) {
     e.preventDefault();
 
-    if (e.target.closest(".data-item").classList.contains("data-item")) {
+    if (e.target.closest(".data-item")?.classList.contains("data-item")) {
       const getObj = arr.find(
         (val) => val.id == $(e.target.closest(".data-item")).data("id")
       );
@@ -149,9 +149,9 @@ $(document).ready(function () {
   });
 
   $(document).on("click", function (e) {
-    console.log(this.querySelector("#del").id, e.target.id);
+    // console.log(this.querySelector("#del").id, e.target.id);
 
-    if (e.target.closest(".data-item").id == "del") {
+    if (e.target?.id == "del") {
       console.log($(e.target.closest(".data-item")).data("id"));
 
       const index = arr.findIndex(
